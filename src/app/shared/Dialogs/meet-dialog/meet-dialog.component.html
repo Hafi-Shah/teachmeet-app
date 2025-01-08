@@ -1,0 +1,40 @@
+<div class="px-4">
+  <div class="d-flex justify-content-between mt-3">
+    <h4 class="text-color-primary">Meet - {{ facName }}</h4>
+    <i
+      style="font-size: 24px"
+      (click)="dismiss()"
+      class="bi bi-x-circle text-color-secondary"
+    ></i>
+  </div>
+  <div class="office-timing mt-5">
+    <h6 class="mb-3">Office Timing</h6>
+    <p>Mon: 8am - 2pm</p>
+    <p>Tue: 10am - 1pm</p>
+    <p>Wed: 11am - 4pm</p>
+  </div>
+  <div class="mb-3 Message">
+    <p for="exampleFormControlTextarea1" class="form-label">
+      Write Your Message
+    </p>
+    <textarea
+      class="form-control border-8"
+      id="exampleFormControlTextarea1"
+      rows="8"
+      placeholder="No more then 300 words"
+    ></textarea>
+    <div class="mt-3 d-flex justify-content-between">
+      <div class="w-100 me-1">
+        <button class="btn-prim py-2 w-100 border-8">Send Request</button>
+      </div>
+      <div>
+        <button
+          (click)="dismiss()"
+          class="w-100 btn-secondary-outline py-2 border-8 px-3"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

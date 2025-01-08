@@ -1,0 +1,22 @@
+.search::placeholder {
+  color: var(--grey-text);
+}
+
+.card {
+  border-radius: 16px;
+  & .status div {
+    border-radius: 8px;
+    font-family: Ubuntu Reg;
+    font-size: 12px;
+  }
+  & .green {
+    color: green;
+  }
+  .fac-profile-img {
+    width: 45px;
+    height: 45px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}

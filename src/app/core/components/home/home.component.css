@@ -1,0 +1,62 @@
+.bi-power {
+  background-color: red;
+}
+.bi-list {
+  font-size: 28px;
+  background: var(--secondarycolor);
+  color: white;
+  border-radius: 50px;
+  padding: 3px 10px;
+}
+.menu {
+  width: 90%;
+  font-family: Ubuntu Reg;
+
+  & i {
+    background-color: var(--primarycolor);
+    padding: 10px;
+    color: white;
+    border-radius: 60px;
+    font-size: 22px;
+  }
+}
+.menu ul li {
+  list-style: none;
+  padding: 12px 6px;
+  background: var(--light-blue);
+  font-size: 18px;
+  margin-top: 20px;
+  border-radius: 50px;
+  color: var(--primarycolor);
+}
+
+.top-bar {
+  height: 55px;
+  border-radius: 50px;
+}
+.profile {
+  & img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  & p {
+    font-size: 14px;
+    transform: translateY(-8px);
+  }
+  & h6 {
+  }
+}
+.bi-list-nested {
+  color: var(--secondarycolor);
+  cursor: pointer;
+}
+
+ion-menu::part(backdrop) {
+  background-color: rgb(143, 143, 255);
+}
+
+/* ion-menu::part(container) {
+  /* border-radius: 0 20px 20px 0; */
+/* box-shadow: 4px 0px 16px rgba(255, 0, 255, 0.18); 
+} */

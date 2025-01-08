@@ -1,0 +1,57 @@
+<ion-menu side="end" contentId="drawr">
+  <ion-content class="ion-padding">
+    <div class="menu d-flex justify-content-between vh-100 flex-column">
+      <div>
+        <ul>
+          <li (click)="myProfileComponent()">
+            <i class="bi bi-person-fill me-1"></i> Profile
+          </li>
+          <li (click)="onRoute('student/notification')">
+            <i class="bi bi-bell-fill me-1"></i> Notifications
+          </li>
+          <li (click)="onRoute('student/setting')">
+            <i class="bi bi-gear-wide-connected me-1"></i> Setting
+          </li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li (click)="onLogout('/login')">
+            <i class="bi bi-power me-1" style="background-color: red"></i>
+            Log Out
+          </li>
+        </ul>
+      </div>
+    </div>
+  </ion-content>
+</ion-menu>
+
+<section style="overflow-x: hidden" class="bg-lightblue main w-100 px-3 vh-100">
+  <div>
+    <div
+      class="top-bar mt-3 px-2 w-100 bg-white d-flex justify-content-between"
+    >
+      <div class="profile mt-2 d-flex">
+        <img
+          src="../../../../assets/images/avatar.jpg"
+          class=""
+          alt="Profile Picture"
+        />
+        <div class="mx-2 mt-1">
+          <h6 class="text-color-primary mb-3">Haroon Khan</h6>
+          <p class="grey-text">BSCS</p>
+        </div>
+      </div>
+
+      <div
+        class="d-flex justify-content-center flex-column"
+        id="drawr"
+        (click)="toggleMenu()"
+      >
+        <!-- Add click event listener here -->
+        <i class="bi bi-list"></i>
+      </div>
+    </div>
+    <app-faculty-cards></app-faculty-cards>
+  </div>
+</section>

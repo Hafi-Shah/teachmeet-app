@@ -1,0 +1,241 @@
+/* @import "~bootstrap-icons/font/bootstrap-icons.css"; */
+:root {
+  --primarycolor: #3953a4;
+  --secondarycolor: #f47a56;
+  --light-blue: #2c418123;
+  --grey-text: #9b9b9b;
+}
+/* fonts used start */
+@font-face {
+  font-family: Ubuntu Light;
+  src: url(./assets/fonts/Ubuntu-Light.ttf);
+}
+@font-face {
+  font-family: Ubuntu Reg;
+  src: url(./assets/fonts/Ubuntu-Regular.ttf);
+}
+@font-face {
+  font-family: Ubuntu Med;
+  src: url(./assets/fonts/Ubuntu-Medium.ttf);
+}
+@font-face {
+  font-family: Ubuntu Bold;
+  src: url(./assets/fonts/Ubuntu-Bold.ttf);
+}
+.ubuntu-light {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ubuntu-regular {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ubuntu-medium {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ubuntu-bold {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* font used end */
+
+/* scroll bar design */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--light-blue);
+  border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primarycolor);
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #2c4181;
+}
+/* scroll bar design end */
+
+* {
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+  font-family: Ubuntu Bold;
+}
+h4,
+h5,
+h6 {
+  font-family: Ubuntu Med;
+}
+p {
+  font-family: Ubuntu Reg;
+}
+span {
+  font-family: Ubuntu Light;
+}
+/* font Declared end */
+
+.bg-prim {
+  background-color: #3953a4;
+}
+.bg-second {
+  background-color: #f47a56;
+}
+
+.grey-text {
+  color: var(--grey-text);
+}
+
+.text-color-primary {
+  color: var(--primarycolor);
+}
+.text-color-secondary {
+  color: var(--secondarycolor);
+}
+
+.border-8 {
+  border-radius: 8px;
+}
+
+.border-16 {
+  border-radius: 16px;
+}
+
+.border-24 {
+  border-radius: 24px;
+}
+
+.btn-primary {
+  background-color: #3953a4;
+  color: #fff;
+  padding: 10px 0px;
+  border: 0;
+  font-size: 18px;
+  font-family: Ubuntu Med;
+}
+
+.btn-primary:hover {
+  background-color: #2c4181;
+}
+
+.btn-prim {
+  background-color: #3953a4;
+  color: #fff;
+  padding: 10px 0px;
+  border: 0;
+  font-size: 18px;
+  font-family: Ubuntu Med;
+}
+
+.btn-prim:hover {
+  background-color: #2c4181;
+}
+
+.btn-secondary {
+  background-color: #f47b56;
+  color: #fff;
+  padding: 10px 0px;
+  border: 0;
+  font-size: 18px;
+  font-family: Ubuntu Med;
+}
+
+.btn-secondary:hover {
+  background-color: #d56a4a;
+}
+.btn-secondary-outline {
+  background: #fff;
+  border: 1px solid #f47b56;
+  color: #f47b56;
+  padding: 10px 0px;
+
+  font-size: 18px;
+  font-family: Ubuntu Med;
+}
+
+.btn-secondary-outline:hover {
+  background: #f47b56;
+  color: #fff;
+}
+
+label {
+  color: #2c4181;
+  font-weight: 400;
+  margin-left: 5px;
+  font-size: 16px;
+}
+
+.input-field {
+  border: 0;
+  padding: 12px 14px;
+  outline: none;
+}
+.input-field::placeholder {
+  color: #0000006e;
+}
+
+p {
+  font-size: 16px;
+}
+
+.light-shadow {
+  box-shadow: 10px 10xp 3px rgb(0, 0, 0);
+}
+
+.curson-p {
+  cursor: pointer;
+}
+.bg-lightblue {
+  background: #2c418123;
+}
+
+/* hover stats */
+.bg-hover-primary:hover {
+  background: #2c4181;
+  color: #fff;
+}
+
+.bg-hover-secondary:hover {
+  background: #dd6f4d;
+  color: #fff;
+}
+
+.bg-hover-primary-light:hover {
+  background: #2c418134;
+}
+
+.bg-hover-secondary-light:hover {
+  background: #f47b5640;
+}
+
+input:hover,
+input:focus,
+textarea:hover,
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+p {
+  line-height: 2px;
+}

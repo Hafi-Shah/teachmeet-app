@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">teachmeet-app</string>
+    <string name="title_activity_main">teachmeet-app</string>
+    <string name="package_name">com.teachmeet.app</string>
+    <string name="custom_url_scheme">com.teachmeet.app</string>
+</resources>

@@ -1,0 +1,35 @@
+.background {
+  height: 140px;
+  background: var(--primarycolor);
+  border-radius: 0 0 40px 40px;
+  & .bi-chevron-left {
+    padding: 10px 15px;
+    background-color: white;
+    color: var(--primarycolor);
+    margin-top: 20px;
+    font-size: 22px;
+    border-radius: 50px;
+  }
+}
+
+.detail {
+  transform: translateY(-70px);
+}
+.profile-pic {
+  width: 140px;
+  height: 140px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+.card {
+  border-radius: 20px;
+  font-size: 20px;
+  font-family: Ubuntu Reg;
+}
+
+button {
+  border-radius: 14px;
+}
