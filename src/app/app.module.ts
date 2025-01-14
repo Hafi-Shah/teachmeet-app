@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { IonicModule, MenuController } from '@ionic/angular';
+import { ToastService } from './shared/services/toast.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,8 +15,9 @@ import { IonicModule, MenuController } from '@ionic/angular';
     AppRoutingModule,
     BrowserAnimationsModule,
     IonicModule.forRoot(),
+    HttpClientModule,
   ],
-  providers: [MenuController],
+  providers: [MenuController, ToastService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

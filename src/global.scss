@@ -73,10 +73,13 @@
 /* scroll bar design end */
 
 * {
-  transition: 0.3s;
   box-sizing: border-box;
 }
 
+ion-content {
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+}
 h1,
 h2,
 h3 {
@@ -238,4 +241,22 @@ textarea:focus {
 
 p {
   line-height: 2px;
+}
+
+ion-content {
+  --offset-bottom: auto !important;
+  --overflow: auto;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    display: none;
+  }
+
+  .inner-scroll {
+    scrollbar-width: thin;
+  }
 }
