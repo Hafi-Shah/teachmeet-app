@@ -1,4 +1,4 @@
-<ion-menu side="end" contentId="drawr">
+<ion-menu side="end" contentId="mainContent" swipeGesture="false">
   <ion-content class="ion-padding">
     <div class="menu d-flex justify-content-between vh-100 flex-column">
       <div>
@@ -16,7 +16,7 @@
       </div>
       <div>
         <ul>
-          <li (click)="onLogout('/login')">
+          <li (click)="onLogout('/')">
             <i class="bi bi-power me-1" style="background-color: red"></i>
             Log Out
           </li>
@@ -25,33 +25,34 @@
     </div>
   </ion-content>
 </ion-menu>
-
-<section style="overflow-x: hidden" class="bg-lightblue main w-100 px-3 vh-100">
-  <div>
-    <div
-      class="top-bar mt-3 px-2 w-100 bg-white d-flex justify-content-between"
+<ion-content scrollPadding="true">
+  <div class="container bg-lightblue">
+    <section
+      style="overflow-x: hidden"
+      *ngIf="studentData"
+      class="main w-100 px-3 vh-100"
     >
-      <div class="profile mt-2 d-flex">
-        <img
-          src="../../../../assets/images/avatar.jpg"
-          class=""
-          alt="Profile Picture"
-        />
-        <div class="mx-2 mt-1">
-          <h6 class="text-color-primary mb-3">Haroon Khan</h6>
-          <p class="grey-text">BSCS</p>
+      <div>
+        <div class="top-bar mt-3 w-100 bg-white d-flex justify-content-between">
+          <div class="profile ms-2 mt-2 d-flex">
+            <img
+              [src]="studentData.profileImage"
+              class=""
+              alt="Profile Picture"
+            />
+            <div class="mx-2 mt-1">
+              <h6 class="text-color-primary mb-3">
+                {{ studentData.firstName }} {{ studentData.lastName }}
+              </h6>
+              <p class="grey-text">{{ studentData.department }}</p>
+            </div>
+          </div>
+          <button class="border-0 btn" id="mainContent" (click)="toggleMenu()">
+            <i class="bi bi-list"></i>
+          </button>
         </div>
+        <app-faculty-cards></app-faculty-cards>
       </div>
-
-      <div
-        class="d-flex justify-content-center flex-column"
-        id="drawr"
-        (click)="toggleMenu()"
-      >
-        <!-- Add click event listener here -->
-        <i class="bi bi-list"></i>
-      </div>
-    </div>
-    <app-faculty-cards></app-faculty-cards>
+    </section>
   </div>
-</section>
+</ion-content>
