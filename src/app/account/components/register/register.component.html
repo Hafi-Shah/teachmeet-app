@@ -17,9 +17,16 @@
           type="text"
           formControlName="firstName"
           class="form-control"
-          placeholder="Enter email"
+          placeholder="Enter first name"
+          [ngClass]="{
+            'border-danger':
+              form.controls['firstName'].invalid &&
+              form.controls['firstName'].touched
+          }"
+          (input)="isFormValid = true"
         />
       </div>
+
       <div class="form-group mb-4">
         <label>Last Name</label>
         <input
@@ -27,8 +34,15 @@
           formControlName="lastName"
           class="form-control"
           placeholder="Enter last name"
+          [ngClass]="{
+            'border-danger':
+              form.controls['lastName'].invalid &&
+              form.controls['lastName'].touched
+          }"
+          (input)="isFormValid = true"
         />
       </div>
+
       <div class="form-group mb-4">
         <label>Email</label>
         <input
@@ -36,6 +50,11 @@
           formControlName="email"
           class="form-control"
           placeholder="Enter email"
+          [ngClass]="{
+            'border-danger':
+              form.controls['email'].invalid && form.controls['email'].touched
+          }"
+          (input)="isFormValid = true"
         />
       </div>
 
@@ -46,20 +65,43 @@
           formControlName="password"
           class="form-control"
           placeholder="Enter password"
+          [ngClass]="{
+            'border-danger':
+              form.controls['password'].invalid &&
+              form.controls['password'].touched
+          }"
+          (input)="isFormValid = true"
         />
       </div>
+
       <div class="form-group mb-4">
         <label>Mobile</label>
         <input
           type="text"
           formControlName="mobileNumber"
           class="form-control"
-          placeholder="Enter Phone no"
+          placeholder="Enter phone number"
+          [ngClass]="{
+            'border-danger':
+              form.controls['mobileNumber'].invalid &&
+              form.controls['mobileNumber'].touched
+          }"
+          (input)="isFormValid = true"
         />
       </div>
+
       <div class="form-group mb-4">
         <label>Department</label>
-        <select formControlName="departmentId" class="form-select py-2">
+        <select
+          formControlName="departmentId"
+          class="form-select py-2"
+          [ngClass]="{
+            'border-danger':
+              form.controls['departmentId'].invalid &&
+              form.controls['departmentId'].touched
+          }"
+          (input)="isFormValid = true"
+        >
           <option
             *ngFor="let department of departments"
             [value]="department.id"
@@ -68,9 +110,19 @@
           </option>
         </select>
       </div>
+
       <div class="form-group mb-4">
         <label>Gender</label>
-        <select formControlName="genderId" class="form-select py-2">
+        <select
+          formControlName="genderId"
+          class="form-select py-2"
+          [ngClass]="{
+            'border-danger':
+              form.controls['genderId'].invalid &&
+              form.controls['genderId'].touched
+          }"
+          (input)="isFormValid = true"
+        >
           <option *ngFor="let gender of genders" [value]="gender.id">
             {{ gender.name }}
           </option>
@@ -80,29 +132,17 @@
       <div class="form-group mb-4">
         <label>Description</label>
         <textarea
-          class="form-control"
           formControlName="description"
-          placeholder="Enter Description"
+          class="form-control"
+          placeholder="Enter description"
           rows="3"
+          [ngClass]="{
+            'border-danger':
+              form.controls['description'].invalid &&
+              form.controls['description'].touched
+          }"
+          (input)="isFormValid = true"
         ></textarea>
-      </div>
-
-      <div class="select w-100">
-        <input
-          type="file"
-          formControlName="profileImage"
-          class="bg-lightblue"
-          accept=".png, .jpg, .jpeg"
-          (change)="onFileSelected($event)"
-        />
-        <button
-          class="border-0 bg-lightblue p-5 border-8 w-100 text-color-primary"
-        >
-          <h6 class="d-flex align-items-center">
-            <i style="font-size: 3rem" class="bi bi-images me-2"></i>
-            {{ image == "" ? "Select Image" : "Image Selected Successfully" }}
-          </h6>
-        </button>
       </div>
 
       <button type="submit" class="btn w-100 mt-4 mb-5 btn-primary">

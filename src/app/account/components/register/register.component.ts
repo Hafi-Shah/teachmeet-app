@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { forkJoin } from 'rxjs';
+import { ValidatorPattern } from 'src/app/features/constants/validator-pattern';
 import { RegisterStudentReqDTO } from 'src/app/features/models/req/register-student-req';
 import { HttpService } from 'src/app/features/services/http.service';
 import { ToastService } from 'src/app/shared/services/toast.service';
@@ -21,12 +22,23 @@ export class RegisterComponent implements OnInit {
 
   registerStudentReqDto!: RegisterStudentReqDTO;
 
+  isFormValid = true;
+
   form: FormGroup = new FormGroup({
     id: new FormControl(0),
-    firstName: new FormControl('', Validators.required),
-    lastName: new FormControl('', Validators.required),
+    firstName: new FormControl('', [
+      Validators.required,
+      Validators.pattern(ValidatorPattern.NoSpecialCharacterWithoutNumeric),
+    ]),
+    lastName: new FormControl('', [
+      Validators.required,
+      Validators.pattern(ValidatorPattern.NoSpecialCharacterWithoutNumeric),
+    ]),
     departmentId: new FormControl('', Validators.required),
-    email: new FormControl('', [Validators.required, Validators.email]),
+    email: new FormControl('', [
+      Validators.required,
+      Validators.pattern(ValidatorPattern.Email),
+    ]),
     password: new FormControl('', Validators.required),
     genderId: new FormControl('', Validators.required),
     profileImage: new FormControl(''),
@@ -34,7 +46,10 @@ export class RegisterComponent implements OnInit {
       Validators.required,
       Validators.pattern('^[0-9]+$'),
     ]),
-    description: new FormControl(''),
+    description: new FormControl('', [
+      Validators.required,
+      Validators.pattern(ValidatorPattern.NoSpecialCharacterWithNumeric),
+    ]),
   });
   constructor(
     private router: Router,
@@ -70,10 +85,13 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit() {
+    this.form.markAllAsTouched();
     if (this.form.invalid) {
       this.toastService.showToast('Please Fill the required data');
+      this.isFormValid = false;
       return;
     }
+    this.isFormValid = true;
     const data = this.form.value;
     this.registerStudentReqDto = {
       id: data.id,
@@ -98,7 +116,7 @@ export class RegisterComponent implements OnInit {
         },
         complete: () => {
           this.toastService.showToast('Student registered successfully.');
-          this.router.navigate(['/login']);
+          this.router.navigate(['/']);
         },
       });
   }

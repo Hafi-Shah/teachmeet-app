@@ -5,7 +5,11 @@ import { Observable } from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class HttpService {
   environment = {
-    apiUrl: 'http://localhost:5187/api',
+    // Use localhost for browser and IP address for mobile devices
+    apiUrl:
+      window.location.hostname === 'localhost'
+        ? 'http://localhost:5187/api'
+        : 'http://192.168.10.4:5187/api',
   };
   constructor(private http: HttpClient) {}
 
