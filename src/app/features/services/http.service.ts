@@ -7,9 +7,10 @@ export class HttpService {
   environment = {
     // Use localhost for browser and IP address for mobile devices
     apiUrl:
-      window.location.hostname === 'localhost'
-        ? 'http://localhost:5187/api'
-        : 'http://192.168.10.4:5187/api',
+      window.location.hostname === 'localhost' ||
+      window.location.hostname === '0.0.0.0'
+        ? 'http://localhost:5187/api' // For local development
+        : 'http://192.168.10.4:5187/api', // Use the local network IP for mobile devices
   };
   constructor(private http: HttpClient) {}
 

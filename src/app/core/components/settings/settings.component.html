@@ -1,1 +1,51 @@
-<p>settings works!</p>
+<ion-content scrollPadding="true">
+  <div class="container-fluid bg-light vh-100">
+    <div class="p-2">
+      <div class="d-flex text-color-primary mb-4 mt-3">
+        <i
+          (click)="onRoute('student/home')"
+          class="bi bi-chevron-left me-2 curson-p back"
+        ></i>
+        <h4 class="">settings</h4>
+      </div>
+      <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#panelsStayOpen-collapseOne"
+              aria-expanded="true"
+              aria-controls="panelsStayOpen-collapseOne"
+            >
+              Change Status
+            </button>
+          </h2>
+          <div
+            id="panelsStayOpen-collapseOne"
+            class="accordion-collapse collapse show"
+          >
+            <div class="accordion-body">
+              <form [formGroup]="settingsForm">
+                <div class="form-check form-switch">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    role="switch"
+                    id="flexSwitchCheckDefault"
+                    formControlName="status"
+                    (change)="statusValue()"
+                  />
+                  <label class="form-check-label" for="flexSwitchCheckDefault"
+                    >Online</label
+                  >
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

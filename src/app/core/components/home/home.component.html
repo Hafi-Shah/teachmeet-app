@@ -1,31 +1,32 @@
-<ion-menu side="end" contentId="mainContent" swipeGesture="false">
-  <ion-content class="ion-padding">
-    <div class="menu d-flex justify-content-between vh-100 flex-column">
-      <div>
-        <ul>
-          <li (click)="myProfileComponent()">
-            <i class="bi bi-person-fill me-1"></i> Profile
-          </li>
-          <li (click)="onRoute('student/notification')">
-            <i class="bi bi-bell-fill me-1"></i> Notifications
-          </li>
-          <li (click)="onRoute('student/setting')">
-            <i class="bi bi-gear-wide-connected me-1"></i> Setting
-          </li>
-        </ul>
-      </div>
-      <div>
-        <ul>
-          <li (click)="onLogout('/')">
-            <i class="bi bi-power me-1" style="background-color: red"></i>
-            Log Out
-          </li>
-        </ul>
-      </div>
-    </div>
-  </ion-content>
-</ion-menu>
 <ion-content scrollPadding="true">
+  <ion-menu side="end" contentId="mainContent" swipeGesture="false">
+    <ion-content class="ion-padding">
+      <div class="menu d-flex justify-content-between vh-100 flex-column">
+        <div>
+          <ul>
+            <li (click)="myProfileComponent()">
+              <i class="bi bi-person-fill me-1"></i> Profile
+            </li>
+            <li (click)="onRoute('student/notification')">
+              <i class="bi bi-bell-fill me-1"></i> Notifications
+            </li>
+            <li (click)="onRoute('student/setting')">
+              <i class="bi bi-gear-wide-connected me-1"></i> Setting
+            </li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li (click)="onLogout('/login')">
+              <i class="bi bi-power me-1" style="background-color: red"></i>
+              Log Out
+            </li>
+          </ul>
+        </div>
+      </div>
+    </ion-content>
+  </ion-menu>
+
   <div class="container bg-lightblue">
     <section
       style="overflow-x: hidden"

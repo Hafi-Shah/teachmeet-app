@@ -1,1 +1,44 @@
-<p>view-faculty-detail works!</p>
+<section class="w-100 vh-100 bg-lightblue" *ngIf="facultyData">
+  <div class="background w-100">
+    <div class="pb-4"></div>
+    <i (click)="dismiss()" class="bi bi-chevron-left curson-p mx-3"></i>
+  </div>
+  <div class="px-3 detail">
+    <div
+      class="profile-pic mb-2 mx-auto"
+      [style.background-image]="'url(' + facultyData.faculty.profileImage + ')'"
+    ></div>
+    <div class="name text-center mx-auto">
+      <h3 class="text-color-primary mb-3">
+        {{ facultyData.faculty.firstName }} {{ facultyData.faculty.lastName }}
+      </h3>
+      <p class="text-color-secondary">{{ facultyData.faculty.title }}</p>
+    </div>
+    <div class="office-timing mt-5">
+      <h4 class="mb-3 text-color-primary">Office Timing</h4>
+
+      <p class="p-3" *ngFor="let item of facultyData.officeTimings">
+        {{ item.day }}: {{ item.startTime }} - {{ item.endTime }}
+      </p>
+    </div>
+    <div class="card mt-4 border-0 border-16 w-100">
+      <div class="card-body">
+        <div class="mb-3">
+          <i class="bi bi-envelope-at me-1"></i>{{ facultyData.faculty.email }}
+        </div>
+        <div class="mb-3">
+          <i class="bi bi-phone me-1"></i>
+          {{ facultyData.faculty.mobileNumber }}
+        </div>
+        <div class="mb-3">
+          <i class="bi bi-backpack me-1"></i>
+          {{ facultyData.faculty.department }}
+        </div>
+        <div>
+          <i class="bi bi-person me-1"></i> {{ facultyData.faculty.gender }}
+        </div>
+      </div>
+    </div>
+    <div class="d-flex mt-3"></div>
+  </div>
+</section>

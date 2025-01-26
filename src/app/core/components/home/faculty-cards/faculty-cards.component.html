@@ -10,109 +10,57 @@
     class="form-control search border-0"
     placeholder="Search Faculty"
     style="margin-top: -3px"
+    [(ngModel)]="searchTerm"
   />
 </div>
 
 <section class="w-100 mt-3">
   <div class="row gx-3 gy-3">
-    <div class="col-md-6">
+    <div
+      class="col-md-6"
+      *ngFor="
+        let cards of facCardsRes
+          | filter : searchTerm : ['firstName', 'lastName']
+      "
+    >
       <div class="card border-0">
         <div class="card-body">
-          <div class="status w-100 position-relative">
-            <div
-              class="position-absolute top-0 end-0 px-2 green bg-white shadow py-1"
-            >
-              <i class="bi bi-circle-fill me-1"></i> Online
+          <div class="status w-100 d-flex justify-content-end">
+            <div [ngClass]="cards.status ? 'green' : 'text-danger'">
+              <i class="bi bi-circle-fill"></i>
+              <p class="d-inline mx-1">
+                {{ cards.status ? "Online" : "Offline" }}
+              </p>
             </div>
           </div>
           <div class="d-flex">
             <div
               class="fac-profile-img border-8 me-2"
-              style="background-image: url('../../../assets/images/avatar.jpg')"
+              [style.background-image]="'url(' + cards.profileImage + ')'"
             ></div>
             <div>
-              <h5 class="text-color-primary mt-1">Syed Abdul Hameed</h5>
-              <p class="grey-text" style="line-height: 1px">HOD (SE)</p>
+              <h5 class="text-color-primary mt-1">
+                {{ cards.firstName }} {{ cards.lastName }}
+              </h5>
+              <p class="grey-text" style="line-height: 1px">
+                {{ cards.title }}
+              </p>
             </div>
           </div>
           <div class="actions w-100 mt-3">
             <div class="d-flex">
               <button
-                (click)="viewFacDetail()"
+                (click)="viewFacDetail(cards.id)"
                 class="btn-secondary-outline border-8 flex-fill me-2"
               >
                 View
               </button>
               <button
-                (click)="openMeetDialog()"
+                (click)="openMeetDialog(cards.id, cards.status)"
                 class="btn-primary border-8 flex-fill"
               >
                 Meet
               </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="card border-0">
-        <div class="card-body">
-          <div class="status w-100 position-relative">
-            <div
-              class="position-absolute top-0 end-0 px-2 green bg-white shadow py-1"
-            >
-              <i class="bi bi-circle-fill me-1"></i> Online
-            </div>
-          </div>
-          <div class="d-flex">
-            <div
-              class="fac-profile-img border-8 me-2"
-              style="background-image: url('../../../assets/images/avatar.jpg')"
-            ></div>
-            <div>
-              <h5 class="text-color-primary mt-1">Syed Abdul Hameed</h5>
-              <p class="grey-text" style="line-height: 1px">HOD (SE)</p>
-            </div>
-          </div>
-          <div class="actions w-100 mt-3">
-            <div class="d-flex">
-              <button class="btn-secondary-outline border-8 flex-fill me-2">
-                View
-              </button>
-              <button class="btn-primary border-8 flex-fill">Meet</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-md-6">
-      <div class="card border-0">
-        <div class="card-body">
-          <div class="status w-100 position-relative">
-            <div
-              class="position-absolute top-0 end-0 px-2 green bg-white shadow py-1"
-            >
-              <i class="bi bi-circle-fill me-1"></i> Online
-            </div>
-          </div>
-          <div class="d-flex">
-            <div
-              class="fac-profile-img border-8 me-2"
-              style="background-image: url('../../../assets/images/avatar.jpg')"
-            ></div>
-            <div>
-              <h5 class="text-color-primary mt-1">Syed Abdul Hameed</h5>
-              <p class="grey-text" style="line-height: 1px">HOD (SE)</p>
-            </div>
-          </div>
-          <div class="actions w-100 mt-3">
-            <div class="d-flex">
-              <button class="btn-secondary-outline border-8 flex-fill me-2">
-                View
-              </button>
-              <button class="btn-primary border-8 flex-fill">Meet</button>
             </div>
           </div>
         </div>

@@ -30,13 +30,18 @@ export class HomeComponent implements OnInit {
   }
 
   onRoute(path: any) {
-    this.router.navigateByUrl(path);
-    window.location.reload();
-    console.log(path);
+    this.router.navigate([path]);
+    this.menuController.close();
+    setTimeout(() => {
+      window.location.reload();
+    });
   }
 
   onLogout(path: any) {
-    this.onRoute(path);
+    this.router.navigate([path]);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
   }
   getStudentData() {
     this.http

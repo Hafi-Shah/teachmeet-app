@@ -9,6 +9,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
 import { NotificationComponent } from './notification/notification.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ViewFacultyDetailComponent } from './home/faculty-cards/view-faculty-detail/view-faculty-detail.component';
+import { FilterPipe } from '../../features/pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -16,10 +17,10 @@ import { ViewFacultyDetailComponent } from './home/faculty-cards/view-faculty-de
     FacultyCardsComponent,
     MyProfileComponent,
     NotificationComponent,
-    SettingsComponent,
     ViewFacultyDetailComponent,
+    //SettingsComponent,
   ],
   exports: [FacultyCardsComponent],
-  imports: [CommonModule, StudentRoutingModule, SharedModule],
+  imports: [CommonModule, StudentRoutingModule, SharedModule, FilterPipe],
 })
 export class StudentModule {}
